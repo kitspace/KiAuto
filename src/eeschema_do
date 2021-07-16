@@ -556,11 +556,11 @@ if __name__ == '__main__':
     # Ensure we have a config dir
     check_kicad_config_dir(cfg)
     # Back-up the current eeschema configuration
-    cfg.conf_eeschema_bkp = backup_config('Eeschema', cfg.conf_eeschema, EESCHEMA_CFG_PRESENT, cfg)
+    # cfg.conf_eeschema_bkp = backup_config('Eeschema', cfg.conf_eeschema, EESCHEMA_CFG_PRESENT, cfg)
     # Create a suitable configuration
     create_eeschema_config(cfg)
     # Back-up the current kicad_common configuration
-    cfg.conf_kicad_bkp = backup_config('KiCad common', cfg.conf_kicad, KICAD_CFG_PRESENT, cfg)
+    #cfg.conf_kicad_bkp = backup_config('KiCad common', cfg.conf_kicad, KICAD_CFG_PRESENT, cfg)
     # Create a suitable configuration
     create_kicad_config(cfg)
     if cfg.kicad_version >= KICAD_VERSION_5_99:

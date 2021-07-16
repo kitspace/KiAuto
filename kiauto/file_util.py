@@ -156,10 +156,10 @@ def restore_one_config(name, fname, fbkp):
 
 def restore_config(cfg):
     """ Restore original user configuration """
-    cfg.conf_eeschema_bkp = restore_one_config('eeschema', cfg.conf_eeschema, cfg.conf_eeschema_bkp)
-    cfg.conf_kicad_bkp = restore_one_config('KiCad common', cfg.conf_kicad, cfg.conf_kicad_bkp)
-    cfg.conf_hotkeys_bkp = restore_one_config('user hotkeys', cfg.conf_hotkeys, cfg.conf_hotkeys_bkp)
-    cfg.conf_pcbnew_bkp = restore_one_config('pcbnew', cfg.conf_pcbnew, cfg.conf_pcbnew_bkp)
+    #cfg.conf_eeschema_bkp = restore_one_config('eeschema', cfg.conf_eeschema, cfg.conf_eeschema_bkp)
+    #cfg.conf_kicad_bkp = restore_one_config('KiCad common', cfg.conf_kicad, cfg.conf_kicad_bkp)
+    #cfg.conf_hotkeys_bkp = restore_one_config('user hotkeys', cfg.conf_hotkeys, cfg.conf_hotkeys_bkp)
+    #cfg.conf_pcbnew_bkp = restore_one_config('pcbnew', cfg.conf_pcbnew, cfg.conf_pcbnew_bkp)
 
 
 def backup_config(name, file, err, cfg):
@@ -167,10 +167,10 @@ def backup_config(name, file, err, cfg):
     old_config_file = file+'.pre_script'
     logger.debug(name+' config: '+config_file)
     # If we have an old back-up ask for the user to solve it
-    if os.path.isfile(old_config_file):
-        logger.error(name+' config back-up found (%s)', old_config_file)
-        logger.error('It could contain your %s configuration, rename it to %s or discard it.', name.lower(), config_file)
-        exit(err)
+    # if os.path.isfile(old_config_file):
+    #     logger.error(name+' config back-up found (%s)', old_config_file)
+    #     logger.error('It could contain your %s configuration, rename it to %s or discard it.', name.lower(), config_file)
+    #     exit(err)
     if os.path.isfile(config_file):
         logger.debug('Moving current config to '+old_config_file)
         os.rename(config_file, old_config_file)
